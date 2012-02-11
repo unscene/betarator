@@ -1,0 +1,7 @@
+{
+	"username":"root",
+	"password":null,
+	"database":"betarator-dev",
+	"storage":"db/dev.sqlite",
+	"dialect":"sqlite"
+}

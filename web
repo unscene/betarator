@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var flatiron = require('flatiron'),
+    path = require('path'),
+    app = flatiron.app,
+	connect = require('connect'),
+	union = require('union'),
+	betarator = require('./lib/index');
+
+app.use(flatiron.plugins.cli, {
+  dir: path.join(__dirname,'lib','commands'),
+  usage: 'Empty Flatiron Application, please fill out commands'
+});
+
+app.use(flatiron.plugins.http, {
+  before: [
+    connect.bodyParser(),
+    connect.methodOverride(),
+    connect.cookieParser("a"),
+	connect.session({secret: "test"}),
+	]
+});
+
+app.use(betarator.plugins.handlebars, {
+	templatesDir: 'lib/views',
+	partialsDir: 'lib/views/partials',
+});
+
+app.use(betarator.plugins.solr);
+app.use(betarator.plugins.db);
+
+if (require.main === module) {
+  app.init(function () {  
+    app.start(8080, function() {
+    	app.log.info('web-application started on port 8080');
+    });
+  });
+}
