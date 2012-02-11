@@ -9,8 +9,7 @@ vows.describe('Handle bars plugin').addBatch({
 		topic: function() {
 			app.use(betarator.plugins.handlebars, {
 				templatesDir: 'test/resources/templates',
-				partialsDir: 'test/resources/partials',
-				helpersDir: 'test/resources/helpers'
+				partialsDir: 'test/resources/partials'
 			});
 			app.init(this.callback);
 		},

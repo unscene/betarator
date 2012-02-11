@@ -7,20 +7,6 @@ var flatiron = require('flatiron'),
 	union = require('union'),
 	betarator = require('./lib/index');
 
-app.use(flatiron.plugins.cli, {
-  dir: path.join(__dirname,'lib','commands'),
-  usage: 'Empty Flatiron Application, please fill out commands'
-});
-
-app.use(flatiron.plugins.http, {
-  before: [
-    connect.bodyParser(),
-    connect.methodOverride(),
-    connect.cookieParser("a"),
-	connect.session({secret: "test"}),
-	]
-});
-
 app.use(betarator.plugins.handlebars, {
 	templatesDir: 'lib/views',
 	partialsDir: 'lib/views/partials',
@@ -28,6 +14,19 @@ app.use(betarator.plugins.handlebars, {
 
 app.use(betarator.plugins.solr);
 app.use(betarator.plugins.db);
+
+app.use(flatiron.plugins.http, {
+  before: [
+    connect.bodyParser(),
+    connect.methodOverride(),
+    connect.cookieParser("a"),
+	connect.session({secret: "test"})
+	]
+});
+
+var routes = betarator.routes(app);
+
+app.router.get("/", routes.index);
 
 if (require.main === module) {
   app.init(function () {  

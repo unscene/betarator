@@ -1,1 +1,0 @@
-module.exports.solr = require('./solr');
