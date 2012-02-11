@@ -3,5 +3,6 @@
 	"password":null,
 	"database":"betarator-dev",
 	"storage":"db/dev.sqlite",
-	"dialect":"sqlite"
+	"dialect":"sqlite",
+	"logging" : false
 }

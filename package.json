@@ -13,7 +13,7 @@
   "vows": "0.6.x"
  },
  "scripts": {
-  "test": "sequelize -m; vows test/*.js --spec",
+  "test": "sequelize -m -u > /dev/null 2>&1; sequelize -m; vows test/*.js --spec",
   "start": "node app.js"
  }
 }
