@@ -2,7 +2,7 @@
 	"bin" : { "betarator" : "./bin/web" },
     "dependencies": {
         "async": "0.1.15", 
-        "connect": "https://github.com/senchalabs/connect/tarball/2.0.0alpha1", 
+        "connect": "https://github.com/senchalabs/connect/tarball/master", 
         "connect-redis": "1.2.0", 
         "flatiron": "0.1.9", 
         "handlebars": "1.0.5beta", 
@@ -18,8 +18,8 @@
     "name": "betarator", 
     "private": true, 
     "scripts": {
-        "start": "./web", 
+        "start": "./bin/web", 
         "test": "sequelize -m -u > /dev/null 2>&1; sequelize -m; vows --spec"
     }, 
-    "version": "0.0.0"
+    "version": "0.1.0"
 }
