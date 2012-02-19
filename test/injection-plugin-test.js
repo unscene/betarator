@@ -20,15 +20,15 @@ vows.describe('Injection plugin').addBatch({
 			var context = new ContextObject();
 				
 			injection.init(noop);
-			injection.attach({ on: context, inject: { b: "b" }});
+			injection.attach({ on: context, inject: { b: 'b' }});
 			
 			return context;
 		},
 		'inject additional values as func args' : function(context) {
 			var that = context.someMethod();
 			
-			assert.equal(that.a, "a");
-			assert.equal(that.b, "b");
+			assert.equal(that.a, 'a');
+			assert.equal(that.b, 'b');
 		}
 	}
 
