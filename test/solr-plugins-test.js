@@ -6,27 +6,23 @@ var vows = require('vows'),
 	fixtures = require('./fixtures/index');
 
 vows.describe('Solr plugin').addBatch({
- 	"When using the solr plugin" : {
+ 	"The solr plugin extensions" : {
 		topic: function() {
-			debugger;
 			app.use(betarator.plugins.solr);
 			app.init(this.callback);
 		},
-		"should be able to add multiple documents": {
+		"allow you to add multiple documents": {
 			topic: function() {
-				debugger;
 				app.solr.addAll(fixtures.solr, this.callback);
-			},
-			"and be queryable immediately" : {
-				topic: function() {
-					app.solr.query("*:*", this.callback);
-				},
-				"Returns 4 records": function(err, response){
-					assert.equal(err, null);
-					var obj = JSON.parse(response);
-					assert.equal(obj.response.docs.length, 4);
-				}
+			}
+		},
+		"allow you to remove multiple documents": {
+			topic: function() {
+				app.solr.removeAll(this.callback);
 			}
 		}		
+	},
+	"When searching with the solr plugin" : {
+		
 	}
 }).export(module);
