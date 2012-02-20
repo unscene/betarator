@@ -1,13 +1,14 @@
 var vows = require('vows'),
     assert = require('assert'),
-    db = require('../lib/plugins/db'),
     flatiron = require('flatiron'),
-    app = flatiron.app;
+    app = flatiron.app,
+	betarator = require('../lib/')(app);
 
 vows.describe('User model tests').addBatch({
     'When using the database plugin' : {
         topic: function() {
-            app.use(db);
+			debugger;
+            app.use(betarator.plugins.db);
             app.init(this.callback);
         },
         "and creating a user": {
