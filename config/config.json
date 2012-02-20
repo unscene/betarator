@@ -1,1 +1,8 @@
-/Users/ryanfairchild/Code/personal/betarator-web/config/development-config.json
+{
+	"username":"root",
+	"password":null,
+	"database":"betarator-dev",
+	"storage":"db/dev.sqlite",
+	"dialect":"sqlite",
+	"logging" : false
+}
