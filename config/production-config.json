@@ -1,8 +1,0 @@
-{
-	"username":"root",
-	"password":null,
-	"database":"betarator-dev",
-	"storage":"db/test.sqlite",
-	"dialect":"sqlite",
-	"logging" :false
-}
