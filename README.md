@@ -11,4 +11,4 @@ To get started make sure you have node installed (must be > 0.6).  Once you have
 
 This will start the webserver found in bin/
 
-Once the solr integration tests are done
+Once the solr integration tests are done you will need to install the latest version of solr.  You can use the config found in ````conifg/solr````
