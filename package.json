@@ -20,7 +20,10 @@
     "private": true, 
     "scripts": {
         "start": "./bin/web", 
-        "test": "./node_modules/sequelize -m -u > /dev/null 2>&1; ./node_modules/sequelize -m; vows --spec"
+        "test": 
+			"./node_modules/sequelize/bin/sequelize -m -u > /dev/null 2>&1; 
+			./node_modules/sequelize/bin/sequelize -m; 
+			vows --spec"
     }, 
     "version": "0.1.0"
 }
